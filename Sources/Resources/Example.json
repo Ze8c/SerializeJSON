@@ -1,0 +1,21 @@
+{
+    "ownerName" : "Anna",
+    "posts" : [
+        {
+            "title" : "Async requests",
+            "isPublished" : false,
+            "counts" : {
+                "likes" : 0,
+                "views" : 0
+            }
+        },
+        {
+            "title" : "SwiftUI",
+            "isPublished" : true,
+            "counts" : {
+                "likes" : 20,
+                "views" : 1500
+            }
+        }
+    ]
+}
