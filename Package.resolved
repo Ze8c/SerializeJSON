@@ -1,0 +1,15 @@
+{
+  "originHash" : "d99f12e35839f15dd0bc8f5be86b92ff1a9123af088ee17d0c0dfa7171bd3967",
+  "pins" : [
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
+      "state" : {
+        "revision" : "2b6054efa051565954e1d2b9da831680026cd768",
+        "version" : "4.3.0"
+      }
+    }
+  ],
+  "version" : 3
+}
