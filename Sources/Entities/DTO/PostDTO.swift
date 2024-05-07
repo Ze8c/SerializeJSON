@@ -14,15 +14,14 @@ struct PostDTO: Codable {
 }
 
 extension PostDTO {
-    init(json: [String: Any]) throws {
-        guard let title = json["title"] as? String,
-              let isPublished = json["isPublished"] as? Bool,
-              let counts = json["counts"] as? [String: Any]
-        else { throw NSError() }
-        
-        self.title = title
-        self.isPublished = isPublished
-        self.counts = try CountsDTO(json: counts)
+    var convert: Post {
+        Post(title: title, isPublished: isPublished, counts: counts.convert)
+    }
+    
+    init(model: Post) {
+        self.title = model.title
+        self.isPublished = model.isPublished
+        self.counts = CountsDTO(model: model.counts)
     }
 }
 

@@ -13,13 +13,13 @@ struct OwnerDTO: Codable {
 }
 
 extension OwnerDTO {
-    init(json: [String: Any]) throws {
-        guard let ownerName = json["ownerName"] as? String,
-              let posts = json["posts"] as? [[String: Any]]
-        else { throw NSError() }
-        
-        self.ownerName = ownerName
-        self.posts = try posts.map(PostDTO.init(json:))
+    var convert: Owner {
+        Owner(name: ownerName, posts: posts.map(\.convert))
+    }
+    
+    init(model: Owner) {
+        self.ownerName = model.name
+        self.posts = model.posts.map(PostDTO.init(model:))
     }
 }
 

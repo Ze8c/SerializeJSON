@@ -13,12 +13,13 @@ struct CountsDTO: Codable {
 }
 
 extension CountsDTO {
-    init(json: [String: Any]) throws {
-        guard let likes = json["likes"] as? Int, let views = json["views"] as? Int
-        else { throw NSError() }
-        
-        self.likes = likes
-        self.views = views
+    var convert: Counts {
+        Counts(likes: likes, views: views)
+    }
+    
+    init(model: Counts) {
+        self.likes = model.likes
+        self.views = model.views
     }
 }
 

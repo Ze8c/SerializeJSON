@@ -21,6 +21,10 @@ final class ConverterJSON {
         try JSONSerialization.jsonObject(with: json)
     }
     
+    func makeData(model: Any) throws -> Data {
+        try JSONSerialization.data(withJSONObject: model)
+    }
+    
     func parsingThirdParty(json: Data) throws -> JSON {
         try JSON(data: json)
     }
